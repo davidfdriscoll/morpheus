@@ -602,6 +602,14 @@
   },
   {
     "input": "kentaurikw=s",
+    "expected": ""
+  },
+  {
+    "input": "*kentaurikw=s",
+    "expected": "*kentaurikw=s\n<NL>N *kentauriko/s  adverbial\t\t\tos_h_on</NL>\n"
+  },
+  {
+    "input": "kentaurikw=s",
     "opts": [
       "-S"
     ],
