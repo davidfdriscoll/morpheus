@@ -365,6 +365,29 @@ checkstring3(gk_word *Gkword)
     }
     Xstrncpy(string,saveword,MAXWORDSIZE);
   }
+  /* NEW CODE: Try capitalizing a lowercase Greek word when strict case is off */
+  else if( cur_lang() == GREEK && !rval && !(prntflags_of(Gkword)&STRICT_CASE) ) {
+    char capword[MAXWORDSIZE];
+
+    /* Save current word and make capitalized version */
+    Xstrncpy(capword, workword_of(Gkword), MAXWORDSIZE);
+
+    /* Only proceed if word doesn't already start with asterisk */
+    if(capword[0] != BETA_UCASE_MARKER) {
+      /* Move all characters right by 1 and add asterisk */
+      memmove(capword + 1, capword, strlen(capword) + 1);
+      capword[0] = BETA_UCASE_MARKER;
+
+      set_workword(Gkword, capword);
+      if((rval = checkstring4(Gkword)) > 0) {
+        set_workword(Gkword, saveword);
+        return(rval);
+      }
+    }
+
+    /* Restore original word */
+    Xstrncpy(string, saveword, MAXWORDSIZE);
+  }
 
   if( Has_apostr(workword_of(Gkword)) ) {
     if( (rval+=checkapostr(Gkword))) {

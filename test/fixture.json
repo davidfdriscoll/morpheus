@@ -599,5 +599,43 @@
       "-S"
     ],
     "expected": "appellantur\n<NL>V appello  pres ind pass 3rd pl\t\t\tconj1,are_vb</NL><NL>V appello#1  pres subj pass 3rd pl\t\t\tconj3</NL>\n"
+  },
+  {
+    "input": "kentaurikw=s",
+    "opts": [
+      "-S"
+    ],
+    "expected": "kentaurikw=s\n<NL>N *kentaurikw=s,*kentauriko/s  adverbial\t\t\tos_h_on</NL>\n"
+  },
+  {
+    "input": "*kentaurikw=s",
+    "opts": [
+      "-S"
+    ],
+    "expected": "*kentaurikw=s\n<NL>N *kentauriko/s  adverbial\t\t\tos_h_on</NL>\n"
+  },
+  {
+    "input": "kentaurikw=s",
+    "opts": [
+      "-S",
+      "-n"
+    ],
+    "expected": "kentaurikw=s\n<NL>N *kentaurikw=s,*kentauriko/s  adverbial\t\t\tos_h_on</NL><NL>N *kentaurikw/s,*kentauriko/s  masc acc pl\tdoric\t\tos_h_on</NL>\n"
+  },
+  {
+    "input": "*kentaurikw=s",
+    "opts": [
+      "-S",
+      "-n"
+    ],
+    "expected": "*kentaurikw=s\n<NL>N *kentauriko/s  adverbial\t\t\tos_h_on</NL><NL>N *kentaurikw/s,*kentauriko/s  masc acc pl\tdoric\t\tos_h_on</NL>\n"
+  },
+  {
+    "input": "kentaurikos",
+    "opts": [
+      "-S",
+      "-n"
+    ],
+    "expected": "kentaurikos\n<NL>N *kentauriko/s,*kentauriko/s  masc nom sg\t\t\tos_h_on</NL>\n"
   }
 ]
